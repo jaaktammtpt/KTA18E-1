@@ -17,8 +17,9 @@ namespace SecondApp
     public class WebviewActivity : Activity
     {
         WebView _webView;
+
         protected override void OnCreate(Bundle savedInstanceState)
-        {
+        {          
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.webview_layout);
             _webView = FindViewById<WebView>(Resource.Id.webView1);
@@ -28,8 +29,8 @@ namespace SecondApp
         }
 
         public override bool OnKeyDown([GeneratedEnum] Keycode keyCode, KeyEvent e)
-        {
-            if(keyCode == Keycode.Back && _webView.CanGoBack())
+        {            
+            if (keyCode == Keycode.Back && _webView.CanGoBack())
             {
                 _webView.GoBack();
                 return true;
