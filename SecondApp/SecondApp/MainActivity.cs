@@ -3,6 +3,7 @@ using Android.OS;
 using Android.Support.V7.App;
 using Android.Runtime;
 using Android.Widget;
+using Android.Content;
 
 namespace SecondApp
 {
@@ -14,6 +15,13 @@ namespace SecondApp
             base.OnCreate(savedInstanceState);
             // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.activity_main);
+
+            var toSecondActivityButton = FindViewById<Button>(Resource.Id.button1);
+            toSecondActivityButton.Click += delegate
+            {
+                var intent = new Intent(this, typeof(SecondActivity));
+                StartActivity(intent);
+            };
         }
     }
 }

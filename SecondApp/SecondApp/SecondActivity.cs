@@ -18,6 +18,7 @@ namespace SecondApp
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
+            SetContentView(Resource.Layout.second_layout);
 
             // Create your application here
         }
