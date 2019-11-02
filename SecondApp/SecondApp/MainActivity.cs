@@ -17,9 +17,13 @@ namespace SecondApp
             SetContentView(Resource.Layout.activity_main);
 
             var toSecondActivityButton = FindViewById<Button>(Resource.Id.button1);
+            var editText = FindViewById<EditText>(Resource.Id.editText1);
+
             toSecondActivityButton.Click += delegate
             {
+                var text = editText.Text;
                 var intent = new Intent(this, typeof(SecondActivity));
+                intent.PutExtra("editextvalue", text);
                 StartActivity(intent);
             };
         }
