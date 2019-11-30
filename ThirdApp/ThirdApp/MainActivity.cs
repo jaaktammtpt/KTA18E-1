@@ -3,6 +3,7 @@ using Android.OS;
 using Android.Support.V7.App;
 using Android.Runtime;
 using Android.Widget;
+using System.Collections.Generic;
 
 namespace ThirdApp
 {
@@ -18,16 +19,18 @@ namespace ThirdApp
 
             var listView = FindViewById<ListView>(Resource.Id.listView1);
 
-            var countries = new string[] {"Afghanistan","Albania","Algeria","American Samoa","Andorra",
-                    "Angola","Anguilla","Antarctica","Antigua and Barbuda","Argentina",
-                    "Armenia","Aruba","Australia","Austria","Azerbaijan",
-                    "Bahrain","Bangladesh","Barbados","Belarus","Belgium",
-                    "Belize","Benin","Bermuda","Bhutan","Bolivia",
-                    "Bosnia and Herzegovina","Botswana","Bouvet Island","Brazil","British Indian Ocean Territory",
-                    "British Virgin Islands","Brunei","Bulgaria","Burkina Faso","Burundi",
-                    };
+            var carList = new List<Car> 
+            {
+                new Car() { Manufactorer = "Tesla", Model = "CyberTruck", KW = 300 },
+                new Car() { Manufactorer = "Ford", Model = "Fiesta", KW = 80 },
+                new Car() { Manufactorer = "Mercedes", Model = "E", KW = 145 },
+                new Car() { Manufactorer = "Ford", Model = "Focus", KW = 60 },
+                new Car() { Manufactorer = "Subaru", Model = "Impreza", KW = 200 },
+                new Car() { Manufactorer = "Lada", Model = "Niva", KW = 400 },               
+            };
 
-            listView.Adapter = new BasicAdapter(this, countries);
+
+            listView.Adapter = new BasicAdapter(this, carList);
             
             listView.ItemClick += delegate (object sender, AdapterView.ItemClickEventArgs args)
             {

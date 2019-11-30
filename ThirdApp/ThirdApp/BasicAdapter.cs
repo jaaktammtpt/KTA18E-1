@@ -12,24 +12,24 @@ using Android.Widget;
 
 namespace ThirdApp
 {
-    public class BasicAdapter : BaseAdapter<string>
+    public class BasicAdapter : BaseAdapter<Car>
     {
-        string[] _items;
+        List<Car> _items;
         Activity _context;
-        public BasicAdapter(Activity context, string[] items) :base() 
+        public BasicAdapter(Activity context, List<Car> items) :base() 
         {
             this._context = context;
             this._items = items;
         }
 
-        public override string this[int position] 
+        public override Car this[int position] 
         {
             get { return _items[position]; }
         }
 
         public override int Count 
         {
-            get { return _items.Length; }
+            get { return _items.Count; }
         }
 
         public override long GetItemId(int position)
@@ -42,7 +42,7 @@ namespace ThirdApp
             View view = convertView;
             if (view == null)
                 view = _context.LayoutInflater.Inflate(Android.Resource.Layout.SimpleListItem1, null);
-            view.FindViewById<TextView>(Android.Resource.Id.Text1).Text = _items[position];
+            view.FindViewById<TextView>(Android.Resource.Id.Text1).Text = _items[position].Manufactorer;
             return view;
         }
     }
