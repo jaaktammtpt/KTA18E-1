@@ -27,7 +27,7 @@ namespace ThirdApp
                     "British Virgin Islands","Brunei","Bulgaria","Burkina Faso","Burundi",
                     };
 
-            listView.Adapter = new ArrayAdapter<string>(this, Android.Resource.Layout.SimpleListItem1, countries);
+            listView.Adapter = new BasicAdapter(this, countries);
             
             listView.ItemClick += delegate (object sender, AdapterView.ItemClickEventArgs args)
             {
