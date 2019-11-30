@@ -45,6 +45,9 @@ namespace ThirdApp
             view.FindViewById<TextView>(Resource.Id.manufactorerTextView).Text = _items[position].Manufactorer;
             view.FindViewById<TextView>(Resource.Id.modelTextView).Text = _items[position].Model;
             view.FindViewById<TextView>(Resource.Id.kwTextView).Text = _items[position].KW.ToString();
+            //var imageView = view.FindViewById<ImageView>(Resource.Id.imageView1);
+            //imageView.SetImageResource(items[position].Image);
+            view.FindViewById<ImageView>(Resource.Id.imageView1).SetImageResource(_items[position].Image);
             return view;
         }
     }
